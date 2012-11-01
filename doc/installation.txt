@@ -1,0 +1,11 @@
+==========================================
+Welcome to boss deployment tool installation.
+While deploying web projects boss will help to you.
+
+Please check latest version; http://github.com/irfan/boss
+Dependencies; unix based any OS, git
+
+Please install git before install this script. If you are using;
+   Debian or Ubuntu: sudo apt-get install git
+   Macports on Mac OS X: sudo port install git-core
+==========================================

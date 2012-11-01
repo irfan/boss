@@ -1,4 +1,5 @@
-boss
+boss - Git Deployment Tool
 ====
 
-Git Deployment Tool
+Documentation is not ready yet
+
