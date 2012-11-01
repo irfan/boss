@@ -13,7 +13,7 @@ __INIT__remotedeploy () {
     # DeployRollBackVersion. It will overwrite 
     # version number and will deploy it.
     
-    if [[ ${2} -eq 'rollback' ]]; then
+    if [[ "${2}" = 'rollback' ]]; then
         DeployRollBackVersion ${@}
     else
         DeployNewVersion ${@}
