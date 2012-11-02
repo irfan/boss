@@ -1,6 +1,8 @@
-boss - Git Deployment Tool
-====
+[boss - yet another git deployment tool](http://irfandurmus.com/projects/boss/) 
+===
 
+Usage
+---
 
 Usage: boss [command] [arguments]
   
@@ -16,7 +18,8 @@ Usage: boss [command] [arguments]
               list                      List all the project
               remove  project           Remove given project
 
+Details
+---
+Please [check this page](http://irfandurmus.com/projects/boss/) for details.
 
-Documentation is not ready yet
-====
 
