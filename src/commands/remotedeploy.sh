@@ -54,10 +54,10 @@ DeployRollBackVersion () {
     fi
     
     local VERSION=`cat .boss/version_old`
-    local TAG=".git/refs/tags/$VERSION"
+    local TAG=$(__version__is__valid $VERSION)
     local REMOTEHTTPUSER=${4}
     
-    if [[ ! -f "$TAG"  ]]; then
+    if [[ $TAG !== 1 ]]; then
         echo "Rolling back is aborted."
         echo ".boss/version_old file looking wrong"
         
@@ -143,7 +143,7 @@ DeployNewVersion () {
     
     echo '--> Getting new version';
     
-    if [[ ! -f ".git/refs/tags/${VERSION}" ]]; then
+    if [[ $(__version__is__valid $VERSION) !== 1 ]]; then
         
         echo "Deployment aborted."
         echo "Because ${VERSION} is not a valid version"
@@ -155,7 +155,7 @@ DeployNewVersion () {
         exit 1
     fi
     
-    `git checkout refs/tags/$VERSION >> ${LOGFILE} 2>&1`
+    `git checkout $VERSION >> ${LOGFILE} 2>&1`
     
     # add the new version
     echo `git describe --tag` > .boss/version

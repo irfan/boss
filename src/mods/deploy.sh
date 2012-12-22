@@ -63,7 +63,6 @@ __INIT__deploy () {
     local PROJECT="$2"
     local CONF="$ETC/$PROJECT.conf"
     local VERSION=$3 # passing deploy functions
-    local TAG=".git/refs/tags/$VERSION"
     
     # exit if config file not exists 
     if [[ ! -f "$CONF" ]]; then

@@ -51,7 +51,7 @@ __INIT__localdeploy () {
         exit 1
     fi
     
-    `git checkout refs/tags/$VERSION &>/dev/null`
+    `git checkout $VERSION &>/dev/null`
     
     echo 'Deployment successed.'
     echo "Current version is `git describe --tags`"
