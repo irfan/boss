@@ -24,8 +24,7 @@ __INIT__install () {
     
     case $INSTALLAPPROVE in
         y|Y )
-            echo ''
-            continue;;
+            echo '';;
         * )
             echo ''
             exit 1 ;;
