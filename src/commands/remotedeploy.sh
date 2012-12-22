@@ -54,10 +54,9 @@ DeployRollBackVersion () {
     fi
     
     local VERSION=`cat .boss/version_old`
-    local TAG=$(__version__is__valid $VERSION)
     local REMOTEHTTPUSER=${4}
     
-    if [[ $TAG != 1 ]]; then
+    if [[ `git show-ref | awk '{print $2}' | grep "^refs/tags/"$VERSION"$" | wc -l | tr -d ' '` != 1 ]]; then
         echo "Rolling back is aborted."
         echo ".boss/version_old file looking wrong"
         

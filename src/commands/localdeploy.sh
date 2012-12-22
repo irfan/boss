@@ -10,7 +10,6 @@
 __INIT__localdeploy () {
     local LOCAL=${1}
     local VERSION=${2}
-    local TAG=${3}
     
     echo '--> Directory changing';
     
@@ -44,7 +43,7 @@ __INIT__localdeploy () {
     
     echo '--> Getting new version';
     
-    if [[ ! -f "${TAG}" ]]; then
+    if [[ `git show-ref | awk '{print $2}' | grep "^refs/tags/"$VERSION"$" | wc -l | tr -d ' '` != 1 ]]; then
         echo "Deployment aborted."
         echo "Because ${VERSION} is not a valid version"
         echo "To add new version: git tag -a ${VERSION} -m 'Version ${VERSION} relasing'"

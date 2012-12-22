@@ -23,9 +23,6 @@ __INIT__boss () {
     case $1 in
         help|test|deploy|rollback|project )
             
-            # utils.sh contains some tools
-            source "$SRC/utils.sh"
-            
             MOD=$1
             shift
             source "$MODS/$MOD.sh"
