@@ -24,7 +24,7 @@ __INIT__boss () {
         help|test|deploy|rollback|project )
             
             # utils.sh contains some tools
-            source $SRC/utils.sh
+            source "$SRC/utils.sh"
             
             MOD=$1
             shift

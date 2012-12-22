@@ -7,7 +7,10 @@
 # Utils
 #
 
-__is__tag__valid () {
+
+# if version is valid then returns 1
+#
+__version__is__valid () {
     
     local VER=$1
     
